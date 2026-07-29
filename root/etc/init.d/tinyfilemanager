@@ -50,6 +50,7 @@ init_config() {
 		s|// --- EDIT BELOW CONFIGURATION CAREFULLY ---|\<?php\n$defconf|; \
 		s|// --- EDIT BELOW CAREFULLY OR DO NOT EDIT AT ALL ---|?\>|; \
 		/\/\/ if User has the external config file, try to use it to override the default config above/,/^}/d; \
+		/^define(/d; \
 		p \
 	}" "$WORKDIR/index.php" > "$1"
 
